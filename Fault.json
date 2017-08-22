@@ -1,0 +1,305 @@
+{
+	"id": "application/vnd.replyltd.fault.v1+json",
+	"$schema": "http://json-schema.org/draft-06/schema#",
+	"title": "Fault",
+	"description": "The fault object used to hold values for an error occurring within a middleware component; intended to be used as part of a SOAP:detail tag within the fault as per the SOAP 1.1 specification.",
+	"type": "object",
+	"properties": 
+	{
+		"timestamp": 
+		{
+			"type": "string",
+			"format": "date-time"
+		},
+
+		"originator": 
+		{
+			"type": "object",
+			"properties": 
+			{
+				"address": 
+				{
+					"type": "string"
+				},
+
+				"referenceParameters": 
+				{
+					"type": "array",
+					"items": 
+					{
+						
+					}
+				},
+
+				"metadata": 
+				{
+					"type": "array",
+					"items": 
+					{
+						
+					}
+				}
+			}
+		},
+
+		"errorCode": 
+		{
+			"type": "object",
+			"properties": 
+			{
+				"$": 
+				{
+					"type": "string"
+				},
+
+				"@dialect": 
+				{
+					"type": "string",
+					"description": " The dialect of the Error Code"
+				}
+			}
+		},
+
+		"description": 
+		{
+			"type": "string"
+		},
+
+		"faultCause": 
+		{
+			"type": "object",
+			"properties": 
+			{
+				
+			}
+		},
+
+		"characteristics": 
+		{
+			"type": "array",
+			"description": "A component that allows characteristics of the fault to be specified in addition to those specifically asked for; e.g. Category; Severity; etc.",
+			"items": 
+			{
+				"type": "object",
+				"description": "A characteristic; a name and value. An Example might be Colour=\"Black\" or Memory=\"32 GBytes\".",
+				"properties": 
+				{
+					"nameText": 
+					{
+						"type": "string",
+						"description": "The name of the characteristic."
+					},
+
+					"descText": 
+					{
+						"type": "string",
+						"description": "The description of the characteristic."
+					},
+
+					"typeCode": 
+					{
+						"type": "object",
+						"description": "The type of the characteristic.",
+						"properties": 
+						{
+							"$": 
+							{
+								"type": "string",
+								"description": "The value of the field."
+							},
+
+							"@listAgencyName": 
+							{
+								"type": "string",
+								"description": "The name of the agency that maintains the list of codes. The listAgencyName of the Type Code"
+							},
+
+							"@listName": 
+							{
+								"type": "string",
+								"description": "The name of a list of codes. The listName of the Type Code"
+							}
+						},
+
+						"required": 
+						[
+							"$"
+						]
+					},
+
+					"values": 
+					{
+						"type": "array",
+						"items": 
+						{
+							"type": "object",
+							"description": "A value of the characteristic.",
+							"properties": 
+							{
+								"text": 
+								{
+									"type": "string"
+								},
+
+								"code": 
+								{
+									"type": "object",
+									"properties": 
+									{
+										"$": 
+										{
+											"type": "string",
+											"description": "The value of the field."
+										},
+
+										"@listAgencyName": 
+										{
+											"type": "string",
+											"description": "The name of the agency that maintains the list of codes. The listAgencyName of the Code"
+										},
+
+										"@listName": 
+										{
+											"type": "string",
+											"description": "The name of a list of codes. The listName of the Code"
+										}
+									},
+
+									"required": 
+									[
+										"$"
+									]
+								},
+
+								"amount": 
+								{
+									"type": "object",
+									"properties": 
+									{
+										"$": 
+										{
+											"type": "number",
+											"description": "The value of the field."
+										},
+
+										"@currencyId": 
+										{
+											"type": "string",
+											"description": "The currency of the amount. The currencyID of the Amount"
+										}
+									},
+
+									"required": 
+									[
+										"$"
+									]
+								},
+
+								"quantity": 
+								{
+									"type": "object",
+									"properties": 
+									{
+										"$": 
+										{
+											"type": "number",
+											"description": "The value of the field."
+										},
+
+										"@unitCode": 
+										{
+											"type": "string",
+											"description": "The unit of the quantity or measure. The unitCode of the Quantity"
+										}
+									},
+
+									"required": 
+									[
+										"$"
+									]
+								},
+
+								"numeric": 
+								{
+									"type": "number"
+								},
+
+								"percent": 
+								{
+									"type": "number"
+								},
+
+								"indicator": 
+								{
+									"type": "boolean"
+								},
+
+								"duration": 
+								{
+									"type": "string"
+								},
+
+								"time": 
+								{
+									"type": "string"
+								},
+
+								"date": 
+								{
+									"type": "string",
+									"format": "date-time"
+								},
+
+								"dateTime": 
+								{
+									"type": "string",
+									"format": "date-time"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+
+		"failures": 
+		{
+			"type": "array",
+			"items": 
+			{
+				"type": "object",
+				"description": "A component that describes individual failures within the fault. This component is used to support multiple causes to the fault; i.e. where the fault is generated from one or more API calls or one or more validation failures.",
+				"properties": 
+				{
+					"code": 
+					{
+						"type": "string"
+					},
+
+					"text": 
+					{
+						"type": "string"
+					},
+
+					"dataRef": 
+					{
+						"type": "object",
+						"description": "A reference to the specific field or component within the GBO that generated the failure.",
+						"properties": 
+						{
+							"pathNameText": 
+							{
+								"type": "string"
+							},
+
+							"pathNameValue": 
+							{
+								"type": "string"
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
