@@ -1,0 +1,925 @@
+{
+	"id": "application/vnd.sainsburys-bank.customer-party.v1+json",
+	"$schema": "http://json-schema.org/draft-06/schema#",
+	"type": "object",
+	"title": "$.customerParty",
+	"description": "A person or organisation who has undertaken the role of a customer in their interactions with Sainsburys Bank. A customer is a party that has the potential or has bought some goods or services from the Bank.",
+	"properties": 
+	{
+		"@schemaLocation": 
+		{
+			"type": "string",
+			"description": "The reference to the schema description"
+		},
+
+		"id": 
+		{
+			"type": "object",
+			"title": "$.customerParty.id",
+			"description": "The unique identifier for the customer.",
+			"properties": 
+			{
+				"$": 
+				{
+					"type": "string"
+				},
+
+				"@schemeName": 
+				{
+					"type": "string"
+				},
+
+				"@schemeAgencyName": 
+				{
+					"type": "string"
+				}
+			},
+
+			"additionalProperties": false,
+			"required": 
+			[
+				"$"
+			]
+		},
+
+		"name": 
+		{
+			"type": "string",
+			"title": "$.customerParty.name",
+			"description": "The name of the customer."
+		},
+
+		"desc": 
+		{
+			"type": "string",
+			"title": "$.customerParty.desc",
+			"description": "A description of the customer"
+		},
+
+		"statusCode": 
+		{
+			"type": "object",
+			"title": "$.customerParty.statusCode",
+			"description": "The current status of the customer in relation to the organisation.",
+			"properties": 
+			{
+				"$": 
+				{
+					"type": "string"
+				},
+
+				"@listName": 
+				{
+					"type": "string"
+				},
+
+				"@listAgencyName": 
+				{
+					"type": "string"
+				}
+			},
+
+			"additionalProperties": false,
+			"required": 
+			[
+				"$"
+			]
+		},
+
+		"roleOf": 
+		{
+			"type": "object",
+			"title": "$.customerParty.roleOf",
+			"description": "A party is an active actor in their relationships with the organisation. A party being either a person or organisation",
+			"properties": 
+			{
+				"party": 
+				{
+					"type": "object",
+					"title": "$.customerParty.roleOf",
+					"description": "A party is an active actor in their relationships with the organisation. A party being either a person or organisation",
+					"properties": 
+					{
+						"id": 
+						{
+							"type": "object",
+							"title": "$.customerParty.roleOf.id",
+							"description": "The identifier of the party",
+							"properties": 
+							{
+								"$": 
+								{
+									"type": "string"
+								},
+
+								"@schemeName": 
+								{
+									"type": "string"
+								},
+
+								"@schemeAgencyName": 
+								{
+									"type": "string"
+								}
+							},
+
+							"additionalProperties": false,
+							"required": 
+							[
+								"$"
+							]
+						},
+
+						"name": 
+						{
+							"type": "string",
+							"title": "$.customerParty.roleOf.name",
+							"description": "The name of the party"
+						},
+
+						"desc": 
+						{
+							"type": "string",
+							"title": "$.customerParty.roleOf.desc",
+							"description": "A description of the party"
+						},
+
+						"contactPoints": 
+						{
+							"type": "array",
+							"title": "$.customerParty.roleOf.contactPoints[]",
+							"items": 
+							{
+								"type": "object",
+								"properties": 
+								{
+									"id": 
+									{
+										"type": "object",
+										"title": "$.customerParty.roleOf.contactPoints[].id",
+										"description": "A unique identifier for the contact point",
+										"properties": 
+										{
+											"$": 
+											{
+												"type": "string"
+											},
+
+											"@schemeName": 
+											{
+												"type": "string"
+											},
+
+											"@schemeAgencyName": 
+											{
+												"type": "string"
+											}
+										},
+
+										"additionalProperties": false,
+										"required": 
+										[
+											"$"
+										]
+									},
+
+									"name": 
+									{
+										"type": "string",
+										"title": "$.customerParty.roleOf.contactPoints[].name",
+										"description": "The name of the contact point for the party"
+									},
+
+									"typeCode": 
+									{
+										"type": "object",
+										"title": "$.customerParty.roleOf.contactPoints[].typeCode",
+										"description": "The type of contact point, e.g. Business, Home, Personal.",
+										"properties": 
+										{
+											"$": 
+											{
+												"type": "string"
+											},
+
+											"@listName": 
+											{
+												"type": "string"
+											},
+
+											"@listAgencyName": 
+											{
+												"type": "string"
+											}
+										},
+
+										"additionalProperties": false,
+										"required": 
+										[
+											"$"
+										]
+									},
+
+									"preferredInd": 
+									{
+										"type": "boolean",
+										"title": "$.customerParty.roleOf.contactPoints[].preferredInd",
+										"description": "Whether this is the preferred contact point for the party"
+									},
+
+
+									"phoneNumber": 
+									{
+										"type": "object",
+										"title": "$.customerParty.roleOf.contactPoints[].phoneNumber",
+										"properties": 
+										{
+											"typeCode": 
+											{
+												"type": "object",
+												"title": "$.customerParty.roleOf.contactPoints[].phoneNumber.typeCode",
+												"description": "The type of phone number",
+												"properties": 
+												{
+													"$": 
+													{
+														"type": "string"
+													},
+
+													"@listName": 
+													{
+														"type": "string"
+													},
+
+													"@listAgencyName": 
+													{
+														"type": "string"
+													}
+												},
+
+												"additionalProperties": false,
+												"required": 
+												[
+													"$"
+												]
+											},
+
+											"number": 
+											{
+												"type": "string",
+												"title": "$.customerParty.roleOf.contactPoints[].phoneNumber.number",
+												"description": "The phone number"
+											}
+										},
+
+										"required": 
+										[
+											"number"
+										]
+									},
+
+									"postalAddress": 
+									{
+										"type": "object",
+										"title": "$.customerParty.roleOf.contactPoints[].postalAddress",
+										"properties": 
+										{
+											"occupantName": 
+											{
+												"type": "string",
+												"title": "$.customerParty.roleOf.contactPoints[].postalAddress.occupantName",
+												"description": "The name of the occupant of the postal address"
+											},
+
+											"addressLine1": 
+											{
+												"type": "string",
+												"title": "$.customerParty.roleOf.contactPoints[].postalAddress.addressLine1",
+												"description": "The first line of the postal address"
+											},
+
+											"addressLine2": 
+											{
+												"type": "string",
+												"title": "$.customerParty.roleOf.contactPoints[].postalAddress.addressLine2",
+												"description": "The second line of the postal address"
+											},
+
+											"addressLine3": 
+											{
+												"type": "string",
+												"title": "$.customerParty.roleOf.contactPoints[].postalAddress.addressLine3",
+												"description": "The third line of the postal address"
+											},
+
+											"addressLine4": 
+											{
+												"type": "string",
+												"title": "$.customerParty.roleOf.contactPoints[].postalAddress.addressLine4",
+												"description": "The fourth line of the postal address"
+											},
+
+											"portalDoor": 
+											{
+												"type": "string",
+												"title": "$.customerParty.roleOf.contactPoints[].postalAddress.portalDoor",
+												"description": "The portal door number of the apartment or flat"
+											},
+
+											"buildingNumber": 
+											{
+												"type": "string",
+												"title": "$.customerParty.roleOf.contactPoints[].postalAddress.buildingNumber",
+												"description": "The building number expressed as text, for this address. e.g. 38, 55a"
+											},
+
+											"buildingName": 
+											{
+												"type": "string",
+												"title": "$.customerParty.roleOf.contactPoints[].postalAddress.buildingName",
+												"description": "The building name, expressed as text, of this address"
+											},
+
+											"streetName": 
+											{
+												"type": "string",
+												"title": "$.customerParty.roleOf.contactPoints[].postalAddress.streetName",
+												"description": "The street, expressed as text, of this address"
+											},
+
+											"postCode": 
+											{
+												"type": "string",
+												"title": "$.customerParty.roleOf.contactPoints[].postalAddress.postCode",
+												"description": "The PostCode or ZipCode of the postal address."
+											},
+
+											"city": 
+											{
+												"type": "string",
+												"title": "$.customerParty.roleOf.contactPoints[].postalAddress.city",
+												"description": "The city or town of the postal address"
+											},
+
+											"county": 
+											{
+												"type": "string",
+												"title": "$.customerParty.roleOf.contactPoints[].postalAddress.county",
+												"description": "Name of the county, state or province in which the city falls, where applicable"
+											},
+
+											"countryCode": 
+											{
+												"type": "object",
+												"title": "$.customerParty.roleOf.contactPoints[].postalAddress.countryCode",
+												"description": "The ISO3166 country code for the address.",
+												"properties": 
+												{
+													"$": 
+													{
+														"type": "string"
+													},
+
+													"@listName": 
+													{
+														"type": "string"
+													},
+
+													"@listAgencyName": 
+													{
+														"type": "string"
+													}
+												},
+
+												"additionalProperties": false,
+												"required": 
+												[
+													"$"
+												]
+											},
+
+											"countryName": 
+											{
+												"type": "string",
+												"title": "$.customerParty.roleOf.contactPoints[].postalAddress.countryName",
+												"description": "The full name of the country."
+											}
+										},
+
+										"required": 
+										[
+											"addressLine1",
+											"postCode"
+										]
+									},
+
+									"timeFrame": 
+									{
+										"type": "object",
+										"title": "$.customerParty.roleOf.contactPoints[].timeFrame",
+										"properties": 
+										{
+											"startDateTime": 
+											{
+												"type": "string",
+												"title": "$.customerParty.roleOf.contactPoints[].timeFrame.startDateTime",
+												"description": "The start date and time of the timeframe for contact.",
+												"format": "date-time"
+											},
+
+											"endDateTime": 
+											{
+												"type": "string",
+												"title": "$.customerParty.roleOf.contactPoints[].timeFrame.endDateTime",
+												"description": "The end date and time of the timeframe for contact.",
+												"format": "date-time"
+											}
+										},
+
+										"required": 
+										[
+											"startDateTime"
+										]
+									}
+								}
+							}
+						},
+
+						"person": 
+						{
+							"type": "object",
+							"title": "$.customerParty.roleOf.person",
+							"description": "A party definition specialized to describe a person or individual",
+							"properties": 
+							{
+								"birthDate": 
+								{
+									"type": "string",
+									"title": "$.customerParty.roleOf.person.birthDate",
+									"description": "The date of birth for the person",
+									"format": "date"
+								},
+
+								"birthPlace": 
+								{
+									"type": "string",
+									"title": "$.customerParty.roleOf.person.birthPlace",
+									"description": "The birth place of the person"
+								},
+
+								"deceasedDate": 
+								{
+									"type": "string",
+									"title": "$.customerParty.roleOf.person.deceasedDate",
+									"description": "The date on which the person died",
+									"format": "date"
+								},
+
+								"gender": 
+								{
+									"type": "object",
+									"title": "$.customerParty.roleOf.person.gender",
+									"description": "The gender of the person",
+									"properties": 
+									{
+										"$": 
+										{
+											"type": "string"
+										},
+
+										"@listName": 
+										{
+											"type": "string"
+										},
+
+										"@listAgencyName": 
+										{
+											"type": "string"
+										}
+									},
+
+									"additionalProperties": false,
+									"required": 
+									[
+										"$"
+									]
+								},
+
+								"nationality": 
+								{
+									"type": "object",
+									"title": "$.customerParty.roleOf.person.nationality",
+									"description": "The nationality of the person",
+									"properties": 
+									{
+										"$": 
+										{
+											"type": "string"
+										},
+
+										"@listName": 
+										{
+											"type": "string"
+										},
+
+										"@listAgencyName": 
+										{
+											"type": "string"
+										}
+									},
+
+									"additionalProperties": false,
+									"required": 
+									[
+										"$"
+									]
+								},
+
+								"countryOfResidence": 
+								{
+									"type": "object",
+									"title": "$.customerParty.roleOf.person.countryOfResidence",
+									"description": "The country of residence of the person",
+									"properties": 
+									{
+										"$": 
+										{
+											"type": "string"
+										},
+
+										"@listName": 
+										{
+											"type": "string"
+										},
+
+										"@listAgencyName": 
+										{
+											"type": "string"
+										}
+									},
+
+									"additionalProperties": false,
+									"required": 
+									[
+										"$"
+									]
+								},
+
+								"countryOfTaxResidence": 
+								{
+									"type": "object",
+									"title": "$.customerParty.roleOf.person.countryOfTaxResidence",
+									"description": "The country in which the person is resident for the purposes of taxation.",
+									"properties": 
+									{
+										"$": 
+										{
+											"type": "string"
+										},
+
+										"@listName": 
+										{
+											"type": "string"
+										},
+
+										"@listAgencyName": 
+										{
+											"type": "string"
+										}
+									},
+
+									"additionalProperties": false,
+									"required": 
+									[
+										"$"
+									]
+								},
+
+								"dependents": 
+								{
+									"type": "object",
+									"title": "$.customerParty.roleOf.person.dependents",
+									"description": "The number of dependents the person has",
+									"properties": 
+									{
+										"$": 
+										{
+											"type": "number"
+										},
+
+										"@unitCode": 
+										{
+											"type": "string"
+										}
+									},
+
+									"additionalProperties": false,
+									"required": 
+									[
+										"$",
+										"@unitCode"
+									]
+								},
+
+								"current": 
+								{
+									"type": "object",
+									"title": "$.customerParty.roleOf.person.current",
+									"description": "The employment details of the person",
+									"properties": 
+									{
+										"employment": 
+										{
+											"type": "object",
+											"title": "$.customerParty.roleOf.person.current",
+											"description": "The employment details of the person",
+											"properties": 
+											{
+												"occupation": 
+												{
+													"type": "string",
+													"title": "$.customerParty.roleOf.person.current.occupation",
+													"description": "The primary occupation or role of the person "
+												},
+
+												"organisationID": 
+												{
+													"type": "string",
+													"title": "$.customerParty.roleOf.person.current.organisationID",
+													"description": "The identifier for the organisation party"
+												},
+
+												"organisationName": 
+												{
+													"type": "string",
+													"title": "$.customerParty.roleOf.person.current.organisationName",
+													"description": "The name of the organisation"
+												}
+											},
+
+											"required": 
+											[
+												"occupation",
+												"organisationID",
+												"organisationName"
+											]
+										}
+									}
+								},
+
+								"issuedIdentities": 
+								{
+									"type": "array",
+									"title": "$.customerParty.roleOf.person.issuedIdentities[]",
+									"description": "An identity issued by an organisation such as a passport or driving license",
+									"items": 
+									{
+										"type": "object",
+										"properties": 
+										{
+											"id": 
+											{
+												"type": "object",
+												"title": "$.customerParty.roleOf.person.issuedIdentities[].id",
+												"description": "The identifier for the identity",
+												"properties": 
+												{
+													"$": 
+													{
+														"type": "string"
+													},
+
+													"@schemeName": 
+													{
+														"type": "string"
+													},
+
+													"@schemeAgencyName": 
+													{
+														"type": "string"
+													}
+												},
+
+												"additionalProperties": false,
+												"required": 
+												[
+													"$"
+												]
+											},
+
+											"typeCode": 
+											{
+												"type": "object",
+												"title": "$.customerParty.roleOf.person.issuedIdentities[].typeCode",
+												"description": "The type of identity",
+												"properties": 
+												{
+													"$": 
+													{
+														"type": "string"
+													},
+
+													"@listName": 
+													{
+														"type": "string"
+													},
+
+													"@listAgencyName": 
+													{
+														"type": "string"
+													}
+												},
+
+												"additionalProperties": false,
+												"required": 
+												[
+													"$"
+												]
+											},
+
+											"issueDate": 
+											{
+												"type": "string",
+												"title": "$.customerParty.roleOf.person.issuedIdentities[].issueDate",
+												"description": "The date the identity was issued",
+												"format": "date"
+											},
+
+											"expiryDate": 
+											{
+												"type": "string",
+												"title": "$.customerParty.roleOf.person.issuedIdentities[].expiryDate",
+												"description": "The date the identity will or has expired",
+												"format": "date"
+											},
+
+											"countryCode": 
+											{
+												"type": "object",
+												"title": "$.customerParty.roleOf.person.issuedIdentities[].countryCode",
+												"description": "The country in which the identity was issued.",
+												"properties": 
+												{
+													"$": 
+													{
+														"type": "string"
+													},
+
+													"@listName": 
+													{
+														"type": "string"
+													},
+
+													"@listAgencyName": 
+													{
+														"type": "string"
+													}
+												},
+
+												"additionalProperties": false,
+												"required": 
+												[
+													"$"
+												]
+											}
+										},
+
+										"required": 
+										[
+											"countryCode",
+											"expiryDate",
+											"id",
+											"issueDate",
+											"typeCode"
+										]
+									}
+								},
+
+								"personName": 
+								{
+									"type": "object",
+									"title": "$.customerParty.roleOf.person.personName",
+									"description": "The name of the person ",
+									"properties": 
+									{
+										"title": 
+										{
+											"type": "object",
+											"title": "$.customerParty.roleOf.person.personName.title",
+											"description": "The title the customer is known by, e.g. Mr, Mrs, Miss, etc.",
+											"properties": 
+											{
+												"$": 
+												{
+													"type": "string"
+												},
+
+												"@listName": 
+												{
+													"type": "string"
+												},
+
+												"@listAgencyName": 
+												{
+													"type": "string"
+												}
+											},
+
+											"additionalProperties": false,
+											"required": 
+											[
+												"$"
+											]
+										},
+
+										"fullName": 
+										{
+											"type": "string",
+											"title": "$.customerParty.roleOf.person.personName.fullName",
+											"description": "The full name of the person"
+										},
+
+										"firstName": 
+										{
+											"type": "string",
+											"title": "$.customerParty.roleOf.person.personName.firstName",
+											"description": "The first name or given name of the customer."
+										},
+
+										"middleName": 
+										{
+											"type": "string",
+											"title": "$.customerParty.roleOf.person.personName.middleName",
+											"description": "The family name of the customer."
+										},
+
+										"middleInitial": 
+										{
+											"type": "string",
+											"title": "$.customerParty.roleOf.person.personName.middleInitial",
+											"description": "The middle initial(s) of the customer"
+										},
+
+										"familyName": 
+										{
+											"type": "string",
+											"title": "$.customerParty.roleOf.person.personName.familyName",
+											"description": "The family name of the customer."
+										},
+
+										"prefix": 
+										{
+											"type": "string",
+											"title": "$.customerParty.roleOf.person.personName.prefix",
+											"description": "Prefix to the last name that is not considered part of the last name, such as German von or French de la, etc."
+										},
+
+										"suffix": 
+										{
+											"type": "string",
+											"title": "$.customerParty.roleOf.person.personName.suffix",
+											"description": "Suffix to the last name, such as Senior, III, the Third etc. "
+										},
+
+										"legalName": 
+										{
+											"type": "string",
+											"title": "$.customerParty.roleOf.person.personName.legalName",
+											"description": "The legal name of the person"
+										}
+									},
+
+									"required": 
+									[
+										"familyName",
+										"firstName",
+										"fullName",
+										"legalName"
+									]
+								}
+							},
+
+							"required": 
+							[
+								"personName"
+							]
+						}
+					},
+
+					"required": 
+					[
+						"id",
+						"person"
+					]
+				}
+			}
+		}
+	},
+
+	"required": 
+	[
+		"id",
+		"statusCode",
+		"roleOf"
+	]
+}
